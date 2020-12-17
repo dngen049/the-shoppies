@@ -13,11 +13,6 @@ module.exports = {
           "@error-color": "#f76565",
           "@layout-header-background": "#FFFFFF"
         },
-        lessLoaderOptions: {
-          lessOptions: {
-            noIeCompat: true,
-          },
-        },
       },
     },
     {

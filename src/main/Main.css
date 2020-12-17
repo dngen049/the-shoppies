@@ -1,0 +1,10 @@
+.Container {
+  padding: 10%;
+
+}
+
+.Content {
+  width: 100%;
+  margin-bottom: 2.5%;
+  max-width: 1300px
+}
