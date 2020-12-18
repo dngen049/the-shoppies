@@ -8,3 +8,18 @@
   margin-bottom: 2.5%;
   max-width: 1300px
 }
+
+.banner-enter {
+  opacity: 0;
+}
+.banner-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+.banner-exit {
+  opacity: 1;
+}
+.banner-exit-active {
+  opacity: 0;
+  transition: opacity 1000ms ease-in;
+}

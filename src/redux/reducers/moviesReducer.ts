@@ -10,9 +10,7 @@ interface MovieReducerState {
 const initialState: MovieReducerState  = {
     searchTerm: "",
     movies: [],
-    nominatedMovies: [
-        {name: "Rambo", releaseYear:"2008", isNominated: true}
-    ]
+    nominatedMovies: []
 }
 
 const moviesReducer = (state = initialState, action: movieActionType) => {
@@ -29,8 +27,8 @@ const moviesReducer = (state = initialState, action: movieActionType) => {
             return {...state, movies:[...moviesCopy], nominatedMovies: [...newNominies]};
         case REMOVEMOVIE: 
             const Nominies =  state.nominatedMovies.filter((m: Movie) => m.name !==  action.movie.name && m.releaseYear !== action.movie.releaseYear);
-            const copyOfMovies =  [...state.movies];
-            const index = copyOfMovies.findIndex((m:Movie) => m.name ===  action.movie.name && m.releaseYear === action.movie.releaseYear);
+            const copyOfMovies =  state.movies ? [...state.movies] : [];
+            const index = copyOfMovies?.findIndex((m:Movie) => m.name ===  action.movie.name && m.releaseYear === action.movie.releaseYear);
             if(index !== -1){
                 copyOfMovies[index] = {...action.movie, isNominated:false};
             }

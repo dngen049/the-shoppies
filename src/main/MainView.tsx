@@ -1,12 +1,18 @@
 import React from 'react';
+import {CSSTransition} from 'react-transition-group';
 
-import {  Row, Col } from 'antd'
+import {  Row, Col, Alert } from 'antd'
 import Title from 'antd/lib/typography/Title';
+
 import { NominationComponent, ResultComponent, SearchComponent } from './../components';
 
 import './Main.css';
 
-const MainView:React.FC =() => (
+interface MainViewProps{
+  showBanner: boolean
+}
+
+const MainView:React.FC<MainViewProps> =({showBanner}) => (
   <Row 
     justify="start"
     className="Container">
@@ -21,6 +27,21 @@ const MainView:React.FC =() => (
         <SearchComponent />
         </Col>
       </Row>
+
+      {showBanner && ( 
+       <CSSTransition 
+          timeout={500}
+          classNames="banner">
+            <Row
+            justify="center"
+            className="Content"
+            >
+              <Col span={24}>
+                <Alert  banner message="You have 5 and more nominations" type="warning"></Alert>
+              </Col>
+            </Row>
+        </CSSTransition>
+      )}
       <Row 
       justify="center"
       className="Content"
@@ -32,6 +53,7 @@ const MainView:React.FC =() => (
           <NominationComponent />
         </Col>
       </Row>
+     
     </Row>
 );
 
