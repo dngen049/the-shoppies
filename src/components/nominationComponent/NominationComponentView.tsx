@@ -1,12 +1,18 @@
 import React from 'react';
 
 import { Button, Card } from 'antd';
+import { Movie } from '../../redux/constant';
 
-
-const NominationComponentView: React.FC = () => (
+interface NominationComponentViewProps{
+    nominatedMovies: Movie[],
+    handleNominate: (movie: Movie) => void
+}
+const NominationComponentView: React.FC<NominationComponentViewProps> = ({nominatedMovies, handleNominate}) => (
     <Card title="Nominations ">
         <ul>
-            <li>Rambo (1999) <Button>Remove</Button> </li>
+            {nominatedMovies?.map((m: Movie, i: number) => (
+                <li key={i}>{m.name} ({m.releaseYear}) <Button onClick={() => handleNominate(m)} >Remove</Button> </li>
+            ) )}
         </ul>
     </Card>
 )
