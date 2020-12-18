@@ -16,7 +16,7 @@ const LayoutView: React.FC = ({ children }) => (
         className="root-footer-link"
         target="_blank"
         rel="noopener noreferrer"
-        href="https://github.com/SEG3502/projet-groupe-7"
+        href="https://github.com/dngen049/the-shoppies"
       >
         <GithubOutlined />
         <span className="root-footer-link">Github</span>
