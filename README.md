@@ -6,6 +6,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 go to this link: https://cranky-darwin-947785.netlify.app/
 
+![TheShoppies](Shoppies.gif)
+
 ## Available Scripts
 
 In the project directory, you can run:
